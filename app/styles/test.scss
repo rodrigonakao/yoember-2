@@ -1,0 +1,157 @@
+/* The container */
+.custom-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* before */
+.custom-check label:before {
+  content: "";
+  display: inline-block;  
+  height: 16px;
+  width: 16px;  
+  border: 1px solid;
+}
+
+/* Create a custom checkbox */
+.custom-check-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border: 1px solid #0DA45D;
+  background: white;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-check:hover input ~ .custom-check-checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-check input:checked ~ .custom-check-checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.custom-check-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-check input:checked ~ .custom-check-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-check .custom-check-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+body {
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.checkbox label {
+  position: relative;
+  display: inline-block;
+  padding: 5px 0 0 35px;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+    content: "";
+    display: inline-block;
+}
+
+.checkbox label::before {
+  content: "";
+  display: inline-block;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #0DA45D;
+  background: white;  
+}
+
+.checkbox label::after {
+  height: 10px;
+  width: 10px;
+  border: 6px solid #0DA45D;;  
+}
+
+.checkbox label {
+  position: relative;
+}
+.checkbox label::before,
+.checkbox label::after {
+  position: absolute;
+  content: "";
+    
+    /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+/*Outer-box*/
+.checkbox label::before {
+  top: 3px;
+}
+/*Checkmark*/
+.checkbox label::after {
+  left: 7px;
+  top: 9px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+/*Unhide the checkmark on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+}
+
+.checkbox input[type="checkbox"]:hover + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+  background-color: #ccc;
+}
