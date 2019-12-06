@@ -19,7 +19,8 @@ Router.map(function() {
   this.route('libraries', function() {
     this.route('new');
   });
-  
+
+  this.route('atendimento');
 });
 
 export default Router;
