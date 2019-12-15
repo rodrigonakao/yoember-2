@@ -14,11 +14,11 @@
 
 <h2>List</h2>
 <div class="row">
-  {{#each model as |library|}}
+  {{#each model as |library index|}}
     <div class="col-md-4">
       <div class="panel panel-default library-item">
         <div class="panel-heading">
-          <h3 class="panel-title">{{library.name}}</h3>
+          <h3 class="panel-title">{{index}} - {{library.name}}</h3>
         </div>
         <div class="panel-body">
           <p>Address: {{library.address}}</p>

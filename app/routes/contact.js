@@ -8,7 +8,7 @@ export default Route.extend({
           
       actions: {
     
-        saveContact(newContactMessage) {            
+        saveContact(newContactMessage) {
             newContactMessage.save().then(() => this.controller.set('responseMessage', true));
         },
     
@@ -22,6 +22,13 @@ export default Route.extend({
 
           this.controller.set('responseMessage', false);
         }
-     }
 
+        // deleteContact(contact) {
+        //   let confirmation = confirm('Are you sure do you want delete it?');
+      
+        //   if (confirmation) {
+        //     contact.destroyRecord();
+        //   }
+        // }
+     }
 });

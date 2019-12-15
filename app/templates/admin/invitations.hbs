@@ -14,6 +14,11 @@
       <th>{{index}}</th>
       <th>{{invitation.id}}</th>
       <td>{{invitation.email}}</td>
+      <td>
+        <div class="panel-footer text-center">
+         <button class="btn btn-danger btn-xs" {{action 'deleteInvitation' invitation}}>Delete</button>
+        </div>
+      </td>
     </tr>
   {{/each}}
   </tbody>
