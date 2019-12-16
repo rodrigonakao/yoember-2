@@ -12,7 +12,7 @@
   </div>
 {{/each}} --}}
 
-<h2>List</h2>
+{{!-- <h2>List</h2>
 <div class="row">
   {{#each model as |library index|}}
     <div class="col-md-4">
@@ -29,6 +29,20 @@
           <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
         </div>
       </div>
+    </div>
+  {{/each}}
+</div> --}}
+
+
+{{!-- Lesson 5 --}}
+<h2>List</h2>
+<div class="row">
+  {{#each model as |library index|}}
+    <div class="col-md-4">
+      {{#library-item item=library index=index}}
+        {{#link-to 'libraries.edit' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+        <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+      {{/library-item}}
     </div>
   {{/each}}
 </div>
